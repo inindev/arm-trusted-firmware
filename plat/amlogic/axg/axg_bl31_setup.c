@@ -167,4 +167,11 @@ void bl31_platform_setup(void)
 	gicv2_cpuif_enable();
 
 	axg_scp_boot();
+
+	/*
+	 * SCP module (type, version) pairs from the AXG built-in table.
+	 * There is no public vendor header.
+	 */
+	aml_scpi_unknown_thermal(AML_SCPI_THERMAL_TYPE, AML_SCPI_THERMAL_VER,
+				 AML_SCPI_THERMALVER_TYPE, AML_SCPI_THERMALVER_VER);
 }

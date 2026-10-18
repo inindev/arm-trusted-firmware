@@ -25,6 +25,7 @@
 
 #define SCPI_CMD_JTAG_SET_STATE		0xC0
 #define SCPI_CMD_EFUSE_READ		0xC2
+#define SCPI_CMD_THERMAL_CFG		0xC3
 #define SCPI_CMD_CHIP_ID		0xC6
 
 #define SCPI_CMD_COPY_FW 0xd4
@@ -138,7 +139,7 @@ void aml_scpi_unknown_thermal(uint32_t arg0, uint32_t arg1,
 	mmio_write_32(AML_MHU_SECURE_AP_TO_SCP_PAYLOAD + 0x4, arg1);
 	mmio_write_32(AML_MHU_SECURE_AP_TO_SCP_PAYLOAD + 0x8, arg2);
 	mmio_write_32(AML_MHU_SECURE_AP_TO_SCP_PAYLOAD + 0xC, arg3);
-	aml_mhu_secure_message_send(aml_scpi_cmd(0xC3, 16));
+	aml_mhu_secure_message_send(aml_scpi_cmd(SCPI_CMD_THERMAL_CFG, 16));
 	aml_mhu_secure_message_wait();
 	aml_mhu_secure_message_end();
 }

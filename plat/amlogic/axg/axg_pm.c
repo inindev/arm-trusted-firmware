@@ -121,10 +121,6 @@ static void axg_pwr_domain_off(const psci_power_state_t *target_state)
 
 	gicv2_cpuif_disable();
 
-	if (target_state->pwr_domain_state[MPIDR_AFFLVL2] ==
-					PLAT_LOCAL_STATE_OFF)
-		system_state = SCPI_POWER_OFF;
-
 	if (target_state->pwr_domain_state[MPIDR_AFFLVL1] ==
 					PLAT_LOCAL_STATE_OFF)
 		cluster_state = SCPI_POWER_OFF;

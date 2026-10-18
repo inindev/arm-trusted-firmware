@@ -59,6 +59,9 @@ static uintptr_t aml_sip_handler(uint32_t smc_fid,
 	case AML_SM_GET_SHARE_MEM_OUTPUT_BASE:
 		SMC_RET1(handle, AML_SHARE_MEM_OUTPUT_BASE);
 
+	case AML_SM_GET_REBOOT_REASON:
+		SMC_RET1(handle, mmio_read_32(AML_AO_RTI_STATUS_REG3));
+
 	case AML_SM_EFUSE_READ:
 	{
 		void *dst = (void *)AML_SHARE_MEM_OUTPUT_BASE;

@@ -114,6 +114,7 @@
  ******************************************************************************/
 #define AML_SM_GET_SHARE_MEM_INPUT_BASE		U(0x82000020)
 #define AML_SM_GET_SHARE_MEM_OUTPUT_BASE	U(0x82000021)
+#define AML_SM_GET_REBOOT_REASON		U(0x82000022)
 
 #define AML_SM_EFUSE_READ			U(0x82000030)
 #define AML_SM_EFUSE_USER_MAX			U(0x82000033)

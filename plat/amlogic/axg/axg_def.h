@@ -110,6 +110,7 @@
  ******************************************************************************/
 #define AML_SM_GET_SHARE_MEM_INPUT_BASE		U(0x82000020)
 #define AML_SM_GET_SHARE_MEM_OUTPUT_BASE	U(0x82000021)
+#define AML_SM_GET_REBOOT_REASON		U(0x82000022)
 
 #define AML_SM_EFUSE_READ			U(0x82000030)
 #define AML_SM_EFUSE_USER_MAX			U(0x82000033)
@@ -125,5 +126,15 @@
 #define AML_JTAG_M3_EE				U(1)
 #define AML_JTAG_A53_AO				U(2)
 #define AML_JTAG_A53_EE				U(3)
+
+/*
+ * SCP thermal module (type, version) pairs sent with SCPI 0xC3.
+ * These are the AXG built-in table rows for "thermal" and "thermalver".
+ * GXBB uses 10,2 / 13,1. There is no public vendor header.
+ */
+#define AML_SCPI_THERMAL_TYPE			U(18)
+#define AML_SCPI_THERMAL_VER			U(2)
+#define AML_SCPI_THERMALVER_TYPE		U(17)
+#define AML_SCPI_THERMALVER_VER			U(1)
 
 #endif /* AXG_DEF_H */
